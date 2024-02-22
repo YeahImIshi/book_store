@@ -1,6 +1,25 @@
 <h1>All Books</h1>
-<ul>
-  <% @books.each do |book| %>
-    <li><%= link_to book.title, book_path(book) %></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Height</th>
+      <th>Publisher</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.height %></td>
+        <td><%= book.publisher %></td>
+        <td><%= book.genre.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

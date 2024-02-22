@@ -1,2 +1,5 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h2><%= @book.title %></h2>
+<p><strong>Author:</strong> <%= @book.author %></p>
+<p><strong>Height:</strong> <%= @book.height %></p>
+<p><strong>Publisher:</strong> <%= @book.publisher %></p>
+<p><strong>Genre:</strong> <%= @book.genre.name %></p>
