@@ -13,6 +13,7 @@ require 'faker'
 # Delete existing data
 Book.destroy_all
 Genre.destroy_all
+User.destroy_all
 
 # Seed genres
 genres = ['signal_processing', 'data_science', 'mathematics', 'economics', 'history', 'science', 'psychology', 'fiction', 'computer_science', 'nonfiction', 'philosophy', 'comic']
@@ -36,5 +37,13 @@ end
     height: Faker::Number.decimal(l_digits: 2),
     publisher: Faker::Book.publisher,
     genre: Genre.all.sample
+  )
+end
+
+10.times do
+  User.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password(min_length: 8)
   )
 end
