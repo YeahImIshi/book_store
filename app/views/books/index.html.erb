@@ -1,3 +1,9 @@
+<%= form_tag books_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search books..." %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+
 <h1>All Books</h1>
 <table>
   <thead>
