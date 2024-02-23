@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :books, only: [:index, :show]
   resources :users, only: [:new, :create, :show]
+  resources :genres, only: [:index, :show]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
