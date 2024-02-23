@@ -28,6 +28,9 @@ gem "jbuilder"
 
 gem "faker"
 
+gem 'kaminari'
+
+
 
 
 # Use Redis adapter to run Action Cable in production
