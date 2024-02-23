@@ -1,4 +1,4 @@
-lass SessionsController < ApplicationController
+class SessionsController < ApplicationController
   def new
   end
 
@@ -17,3 +17,4 @@ lass SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path, notice: "Logged out successfully!"
   end
+end
