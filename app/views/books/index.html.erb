@@ -1,9 +1,16 @@
 <%= form_tag books_path, method: :get do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search books..." %>
   <%= select_tag :genre, options_for_select(Genre.all.map { |g| [g.name, g.id] }, params[:genre]), include_blank: true %>
-
   <%= submit_tag "Search" %>
 <% end %>
+
+<% if params[:search].present? && params[:genre].present? %>
+  <% searched_books = Book.where("title LIKE ? AND genre_id = ?", "%#{params[:search]}%", params[:genre]) %>
+  <% if searched_books.empty? %>
+    <p>No such books available in this genre. Try something else?</p>
+  <% end %>
+<% end %>
+
 
 
 <h1>All Books</h1>
