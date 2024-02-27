@@ -30,6 +30,11 @@ gem "faker"
 
 gem 'kaminari'
 
+#gem 'bootstrap', '~> 5.3', '>= 5.3.0'
+
+#gem 'webpacker', '5.4.4'
+
+
 
 
 
